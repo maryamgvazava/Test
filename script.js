@@ -11,20 +11,17 @@ const checkD = document.querySelector('.checkD');
 const checkboxes = document.querySelectorAll("input[type = 'radio']");
 const questionDiv = document.querySelector('.question');
 const answers = document.querySelector('.correctanswers');
+const startTover = document.querySelector('.btn-danger');
+const form = document.querySelector('.form')
+const input = document.querySelectorAll('input');
 
 
 
 
 
-
-
-
-
+startTover.style.display = "none";
 questionDiv.style.display = "none";
-
-
-
-
+answers.style.display = "none";
 
 const testItem0 = {
     question:'',
@@ -33,8 +30,6 @@ const testItem0 = {
     C:'',
     D:''
 }
-
-
 
 const testitem1 = {
     
@@ -107,9 +102,30 @@ for(var i of questionArr){
 
 
 
+
+
+let select = function (V, N, O) {
+    V.addEventListener('click', function(){
+        if (QNumbering == N || QNumbering==O)  { 
+            correctAnswers+=2;
+        }; answers.textContent = `Your Score is: ${correctAnswers}`; });}
+
+
+select(checkB, 1, 5);
+select(checkC, 2);
+select(checkA, 3);
+select(checkD, 4);
+
+
+
+
 let QNumbering = 0;
 let clickCount = 0;
 let correctAnswers = 0;
+
+ if ( correctAnswers == 0){
+        answers.textContent = `Your Score is: ${correctAnswers}`
+                    };
 
 const count = function(){
     
@@ -122,28 +138,53 @@ D.textContent = answerD[QNumbering];
 count();
 
 
-const u = [];
-console.log(u)
+let u = [];
+
+
+
+
 
 startbtn.addEventListener('click', function(){
                
-                       u.push(clickCount+=1);
+                        u.push(clickCount+=1);
                         count(QNumbering+=1);
+                        
                         startbtn.textContent = 'Next';
                         questionDiv.style.display = "block";
-    
-    
+  
 
                     if(questionArr.length-1 <= u.length-1){
-                        QNumbering = '';
+                    QNumbering = '';
                     clickCount = '';
                     questionDiv.style.display = "none";
-                    startbtn.textContent = 'Test Over';
-                    };
+                    startTover.style.display = "block";
+                    startbtn.style.display = "none";
+                    answers.style.display = "block";
 
-                 
+                    };        
+                    
+                    
+
                     for (let k of checkboxes ){
                         k.checked = false;
-                    };
-                    console.log(clickCount);
+                    };  
+
+    });
+
+
+
+    startTover.addEventListener('click', function(){
+
+        QNumbering = 0;
+        clickCount = '';
+        correctAnswers = 0;
+        count(0);
+        u = [''];
+
+    startTover.style.display = "none";
+    questionDiv.style.display = "none";
+    answers.style.display = "none";
+    startbtn.style.display = "block";
+    answers.style.display = "none";
+    startbtn.textContent = 'Start Quiz';
     });
