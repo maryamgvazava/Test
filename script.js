@@ -1,28 +1,29 @@
-const startbtn = document.querySelector('.btn');
-const p = document.querySelector('p');
-const A = document.querySelector('.labelA');
-const B = document.querySelector('.labelB');
-const C = document.querySelector('.labelC');
-const D = document.querySelector('.labelD');
-const checkA = document.querySelector('.checkA');
-const checkB = document.querySelector('.checkB');
-const checkC = document.querySelector('.checkC');
-const checkD = document.querySelector('.checkD');
-const checkboxes = document.querySelectorAll("input[type = 'radio']");
-const questionDiv = document.querySelector('.question');
-const answers = document.querySelector('.correctanswers');
-const startTover = document.querySelector('.btn-danger');
+const startbtn = document.querySelector('.btn');  //starting button 
+const p = document.querySelector('p');             //where the questions must be located
+const A = document.querySelector('.labelA');        //where the A option must be located
+const B = document.querySelector('.labelB');         //where the A option must be located
+const C = document.querySelector('.labelC');         //where the A option must be located
+const D = document.querySelector('.labelD');          //where the A option must be located
+const checkA = document.querySelector('.checkA');     //the first input
+const checkB = document.querySelector('.checkB');      //the second input
+const checkC = document.querySelector('.checkC');       //third input
+const checkD = document.querySelector('.checkD');        //fourth input
+const checkboxes = document.querySelectorAll("input[type = 'radio']");       // input type
+const input = document.querySelectorAll('input');                             //input
+const questionDiv = document.querySelector('.question');                      // where quiz is located
+const answers = document.querySelector('.correctanswers');                    //where the sum of scores are located
+const startTover = document.querySelector('.btn-danger');                     //refresh button
 const form = document.querySelector('.form')
-const input = document.querySelectorAll('input');
 
 
 
-
-
+//initializing the starting position of the elements
 startTover.style.display = "none";
 questionDiv.style.display = "none";
 answers.style.display = "none";
 
+
+//creating a object for questions
 const testItem0 = {
     question:'',
     A:'',
@@ -78,19 +79,21 @@ const testitem5 = {
 };
 
 
-
+//creating an array of all question objects
 var questionArr = [testItem0, testitem1, testitem2, testitem3, testitem4, testitem5];
 
 
+
+//questions and all the A/B/C/D options are pushed in different arrays;
 const sepQuestion = [];
-const answerA = [];
-const answerB = [];
+const answerA = []; //only A options of all questions
+const answerB = [];  //only B options of all questions
 const answerC = [];
 const answerD = [];
 
 
-
-
+//looping over the questionArr and separating all the questions, 
+//and all the A/B/C/D options in different arrays;
 for(var i of questionArr){
     sepQuestion.push(i.question);
     answerA.push(i.A);
@@ -101,9 +104,7 @@ for(var i of questionArr){
 };
 
 
-
-
-
+//checking if the user selected the correct option
 let select = function (V, N, O) {
     V.addEventListener('click', function(){
         if (QNumbering == N || QNumbering==O)  { 
@@ -111,14 +112,14 @@ let select = function (V, N, O) {
         }; answers.textContent = `Your Score is: ${correctAnswers}`; });}
 
 
-select(checkB, 1, 5);
-select(checkC, 2);
+select(checkB, 1, 5);   //for 1 and 5 questions, answer is B
+select(checkC, 2);       //for 2nd questions, answer is C
 select(checkA, 3);
 select(checkD, 4);
 
 
 
-
+//splitting questions and A/B/C/D arrays into real tasks
 let QNumbering = 0;
 let clickCount = 0;
 let correctAnswers = 0;
@@ -137,42 +138,50 @@ D.textContent = answerD[QNumbering];
 };
 count();
 
-
+//counting clicks on the button
 let u = [];
 
-
-
-
-
+//initializing button click event
 startbtn.addEventListener('click', function(){
                
                         u.push(clickCount+=1);
-                        count(QNumbering+=1);
+
+                        //clearing all checkbox
+                        for (let k of checkboxes ){
+                            k.checked = false;
+                        }; 
+
+                       
+                            count(QNumbering+=1);
+                       
+                     
+                        //when clicked, the position of question and A/B/C/D arrays changes with +1
+                        //that means, that we have moved to the next question
                         
+                         //after first click button text changes to 'next';
                         startbtn.textContent = 'Next';
                         questionDiv.style.display = "block";
   
-
-                    if(questionArr.length-1 <= u.length-1){
-                    QNumbering = '';
-                    clickCount = '';
-                    questionDiv.style.display = "none";
-                    startTover.style.display = "block";
-                    startbtn.style.display = "none";
-                    answers.style.display = "block";
-
-                    };        
-                    
-                    
-
-                    for (let k of checkboxes ){
-                        k.checked = false;
-                    };  
-
+                        //with clickCount and u array we counted clicked on the button.
+                        //in case number of clicks are more than number of questions (questionArr.length-1),
+                        //startTover button will be activated and sum of scores will be shown;
+                        if(questionArr.length-1 <= u.length-1){
+                        QNumbering = '';
+                        clickCount = '';
+                        questionDiv.style.display = "none";
+                        startTover.style.display = "block";
+                        startbtn.style.display = "none";
+                        answers.style.display = "block";
+                        };    
+                        
+                       
+  
     });
 
 
 
+
+//reseting test
     startTover.addEventListener('click', function(){
 
         QNumbering = 0;
