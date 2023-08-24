@@ -37,3 +37,10 @@ label, input {
     font-size: 20px;
     font-weight: 500;
 }
+
+
+.correctanswers{
+    font-size: 4rem;
+    font-weight: 500;
+    color: brown;
+}
