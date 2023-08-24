@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 50vh;
     display: block;
 }
 
@@ -10,4 +10,30 @@
     padding:18px 30px;
     font-size: 2rem;
     display: block;
+}
+
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(184, 208, 224);
+}
+
+
+form{
+    padding: 50px;
+}
+
+
+label, input {
+    margin: 10px; 
+}
+
+
+.q1{
+    font-size: 20px;
+    font-weight: 500;
 }
