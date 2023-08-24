@@ -8,11 +8,36 @@ const checkA = document.querySelector('.checkA');
 const checkB = document.querySelector('.checkB');
 const checkC = document.querySelector('.checkC');
 const checkD = document.querySelector('.checkD');
+const checkboxes = document.querySelectorAll("input[type = 'radio']");
+const questionDiv = document.querySelector('.question');
+const answers = document.querySelector('.correctanswers');
 
+
+
+
+
+
+
+
+
+questionDiv.style.display = "none";
+
+
+
+
+
+const testItem0 = {
+    question:'',
+    A:'',
+    B:'',
+    C:'',
+    D:''
+}
 
 
 
 const testitem1 = {
+    
     question:'Inside which HTML element do we put the JavaScript?',
     A:'javasctipt',
     B:'script',
@@ -29,6 +54,7 @@ const testitem2 = {
 };
 
 const testitem3 = {
+
     question: 'what is the type of "undefined"?' ,
     A:'undefined',
     B:'object',
@@ -37,8 +63,28 @@ const testitem3 = {
 };
 
 
+const testitem4 = {
 
-const questionArr = [testitem1, testitem2, testitem3];
+    question: 'How to write an IF statement in JavaScript?',
+    A:'if i = 5',
+    B:'if i = 5 than',
+    C:'if i == 5 than',
+    D:'if (i == 5)'
+};
+
+
+const testitem5 = {
+
+    question: 'How to write an IF statement for executing some code if "i" is NOT equal to 5?' ,
+    A:'if ( i < > 5',
+    B:'if (i != 5)',
+    C:'if (i =! 5 than',
+    D:'if i < > 5'
+};
+
+
+
+var questionArr = [testItem0, testitem1, testitem2, testitem3, testitem4, testitem5];
 
 
 const sepQuestion = [];
@@ -55,11 +101,15 @@ for(var i of questionArr){
     answerA.push(i.A);
     answerB.push(i.B);
     answerC.push(i.C);
-    answerD.push(i.D);   
+    answerD.push(i.D);  
+    
 };
 
 
+
 let QNumbering = 0;
+let clickCount = 0;
+let correctAnswers = 0;
 
 const count = function(){
     
@@ -71,47 +121,29 @@ D.textContent = answerD[QNumbering];
 };
 count();
 
-let correctAnswers = 0;
 
-
-if (QNumbering === 0){
-    checkB.addEventListener('click', function(){
-correctAnswers += 1;
-
-    });
-} else {
-    correctAnswers += 0;
-}
-
-
-
-
+const u = [];
+console.log(u)
 
 startbtn.addEventListener('click', function(){
-    count(QNumbering+=1);
-    startbtn.textContent = 'Next';
+               
+                       u.push(clickCount+=1);
+                        count(QNumbering+=1);
+                        startbtn.textContent = 'Next';
+                        questionDiv.style.display = "block";
+    
+    
+
+                    if(questionArr.length-1 <= u.length-1){
+                        QNumbering = '';
+                    clickCount = '';
+                    questionDiv.style.display = "none";
+                    startbtn.textContent = 'Test Over';
+                    };
+
+                 
+                    for (let k of checkboxes ){
+                        k.checked = false;
+                    };
+                    console.log(clickCount);
     });
-
-
-// const VA = checkA.addEventListener('click', function(){
-   
-// });
-// const VB = checkB.addEventListener('click', function(){
-   
-// });
-// const VC = checkC.addEventListener('click', function(){
-   
-// });
-// const VD = checkD.addEventListener('click', function(){
-   
-// });
-
-
-
-
-
-
-
-
-
-
