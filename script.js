@@ -1,9 +1,9 @@
 const startbtn = document.querySelector('.btn');  //starting button 
 const p = document.querySelector('p');             //where the questions must be located
 const A = document.querySelector('.labelA');        //where the A option must be located
-const B = document.querySelector('.labelB');         //where the A option must be located
-const C = document.querySelector('.labelC');         //where the A option must be located
-const D = document.querySelector('.labelD');          //where the A option must be located
+const B = document.querySelector('.labelB');         //where the B option must be located
+const C = document.querySelector('.labelC');         //where the C option must be located
+const D = document.querySelector('.labelD');          //where the D option must be located
 const checkA = document.querySelector('.checkA');     //the first input
 const checkB = document.querySelector('.checkB');      //the second input
 const checkC = document.querySelector('.checkC');       //third input
@@ -77,10 +77,28 @@ const testitem5 = {
     C:'if (i =! 5 than',
     D:'if i < > 5'
 };
+const testitem6 = {
+
+    question: 'which one represents an OR operator?' ,
+    A:'||',
+    B:'??',
+    C:'&&',
+    D:'$$'
+};
+
+
+const testitem7 = {
+
+    question: 'which one represents an OR operator?' ,
+    A:'||',
+    B:'??',
+    C:'&&',
+    D:'$$'
+};
 
 
 //creating an array of all question objects
-var questionArr = [testItem0, testitem1, testitem2, testitem3, testitem4, testitem5];
+var questionArr = [testItem0, testitem1, testitem2, testitem3, testitem4, testitem5, testitem6, testitem7];
 
 
 
@@ -105,17 +123,17 @@ for(var i of questionArr){
 
 
 //checking if the user selected the correct option
-let select = function (V, N, O) {
+let select = function (V, ...numbers) {
     V.addEventListener('click', function(){
-        if (QNumbering == N || QNumbering==O)  { 
-            correctAnswers+=2;
-        }; answers.textContent = `Your Score is: ${correctAnswers}`; });}
+        if ((QNumbering == numbers) && !this.classList.contains('clicked')){ 
+                correctAnswers+=2;            
+                this.classList.add('clicked');
+                answers.textContent = `Your Score is: ${correctAnswers}`; 
+        };   
+});
+};
 
 
-select(checkB, 1, 5);   //for 1 and 5 questions, answer is B
-select(checkC, 2);       //for 2nd questions, answer is C
-select(checkA, 3);
-select(checkD, 4);
 
 
 
@@ -127,6 +145,9 @@ let correctAnswers = 0;
  if ( correctAnswers == 0){
         answers.textContent = `Your Score is: ${correctAnswers}`
                     };
+
+
+
 
 const count = function(){
     
@@ -172,8 +193,25 @@ startbtn.addEventListener('click', function(){
                         startTover.style.display = "block";
                         startbtn.style.display = "none";
                         answers.style.display = "block";
-                        };    
+                        };   
                         
+                        
+                        //checking correct answers ( look at line : 125)
+                        select(checkB, 1);   
+                        select(checkC, 2);      
+                        select(checkA, 3);
+                        select(checkD, 4);
+
+                        if(QNumbering > 4 < 9){
+                            checkA.classList.remove('clicked');
+                            checkB.classList.remove('clicked');
+                            checkC.classList.remove('clicked');
+                            checkD.classList.remove('clicked');
+                        };
+                        
+                        select(checkB, 5);
+                        select(checkA, 6);
+                        select(checkC, 7);
                        
   
     });
