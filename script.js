@@ -20,7 +20,7 @@ const form = document.querySelector('.form')
 //initializing the starting position of the elements
 startTover.style.display = "none";
 questionDiv.style.display = "none";
-answers.style.display = "block";
+answers.style.display = "none";
 
 
 //creating a object for questions
@@ -123,7 +123,7 @@ for(var i of questionArr){
 
 
 //checking if the user selected the correct option
-let select = function (V, ...numbers) {
+let select = function (V, numbers) {
     V.addEventListener('click', function(){
         if ((QNumbering == numbers) && !this.classList.contains('clicked')){ 
                 correctAnswers+=2;            
