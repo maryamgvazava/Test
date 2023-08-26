@@ -13,7 +13,8 @@ const input = document.querySelectorAll('input');                             //
 const questionDiv = document.querySelector('.question');                      // where quiz is located
 const answers = document.querySelector('.correctanswers');                    //where the sum of scores are located
 const startTover = document.querySelector('.btn-danger');                     //refresh button
-const form = document.querySelector('.form')
+const form = document.querySelector('.form');
+const h1 = document.querySelector('h1');
 
 
 
@@ -23,8 +24,9 @@ questionDiv.style.display = "none";
 answers.style.display = "block";
 
 
+
 //creating a object for questions
-const testItem0 = {
+const testitem0 = {
     question:'',
     A:'',
     B:'',
@@ -89,7 +91,7 @@ const testitem6 = {
 
 const testitem7 = {
 
-    question: 'which one represents an OR operator?' ,
+    question: 'which one represents an AND operator?' ,
     A:'||',
     B:'??',
     C:'&&',
@@ -98,7 +100,7 @@ const testitem7 = {
 
 
 //creating an array of all question objects
-var questionArr = [testItem0, testitem1, testitem2, testitem3, testitem4, testitem5, testitem6, testitem7];
+let questionArr = [testitem0, testitem1, testitem2, testitem3, testitem4, testitem5, testitem6, testitem7];
 
 
 
@@ -112,7 +114,7 @@ const answerD = [];
 
 //looping over the questionArr and separating all the questions, 
 //and all the A/B/C/D options in different arrays;
-for(var i of questionArr){
+for(let i of questionArr){
     sepQuestion.push(i.question);
     answerA.push(i.A);
     answerB.push(i.B);
@@ -122,30 +124,12 @@ for(var i of questionArr){
 };
 
 
-//checking if the user selected the correct option
-let select = function (V, numbers) {
-    V.addEventListener('click', function(){
-        if ((QNumbering == numbers) && !this.classList.contains('clicked')){ 
-                correctAnswers+=2;            
-                this.classList.add('clicked');
-                answers.textContent = `Your Score is: ${correctAnswers}`; 
-        };   
-});
-};
-
-
-
 
 
 //splitting questions and A/B/C/D arrays into real tasks
 let QNumbering = 0;
 let clickCount = 0;
 let correctAnswers = 0;
-
- if ( correctAnswers == 0){
-        answers.textContent = `Your Score is: ${correctAnswers}`
-                    };
-
 
 
 
@@ -166,15 +150,33 @@ let u = [];
 startbtn.addEventListener('click', function(){
                
                         u.push(clickCount+=1);
+                        count(QNumbering+=1);
 
-                        //clearing all checkbox
+// enable the start button
+                        if(startbtn.value == 'Start Quiz'){
+                            startbtn.disabled = false;
+                        } else {
+                            startbtn.disabled = true;
+                        }
+                                        
+                        
+                        
+                        // Add click event listeners to radio buttons
+                        checkboxes.forEach(checkbox => {
+                            checkbox.addEventListener('click', function() {
+                                // Check if at least one radio button is checked
+                                const atLeastOneChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+                                startbtn.disabled = !atLeastOneChecked; // Enable the button if at least one is checked
+                            });
+                        });
+                        
+
+//remove automated checked mark on every next question
                         for (let k of checkboxes ){
-                            k.checked = false;
-                        }; 
+                                k.checked = false;
+                        };
 
-                       
-                            count(QNumbering+=1);
-                       
+
                      
                         //when clicked, the position of question and A/B/C/D arrays changes with +1
                         //that means, that we have moved to the next question
@@ -186,23 +188,36 @@ startbtn.addEventListener('click', function(){
                         //with clickCount and u array we counted clicked on the button.
                         //in case number of clicks are more than number of questions (questionArr.length-1),
                         //startTover button will be activated and sum of scores will be shown;
-                        if(questionArr.length-1 <= u.length-1){
-                        QNumbering = '';
-                        clickCount = '';
-                        questionDiv.style.display = "none";
-                        startTover.style.display = "block";
-                        startbtn.style.display = "none";
-                        answers.style.display = "block";
-                        };   
+                                if(questionArr.length-1 <= u.length-1){
+                                QNumbering = '';
+                                clickCount = '';
+                                questionDiv.style.display = "none";
+                                startTover.style.display = "block";
+                                startbtn.style.display = "none";
+                                answers.style.display = "block";
+                                };   
+
+
+
+                        //checking if the user selected the correct option
                         
+                        let select = function (V, numbers) {
+                            V.addEventListener('click', function(){
+                                if ((QNumbering == numbers) && !this.classList.contains('clicked')){ 
+                                        correctAnswers+=2;            
+                                        this.classList.add('clicked');
+                                };   
+                        });
+                        };
+
                         
                         //checking correct answers ( look at line : 125)
                         function setupAndReset(...selections) {
                             for (let i = 0; i < selections.length; i += 2) {
                                 select(selections[i], selections[i + 1]);
                                 selections[i].classList.remove('clicked');
-                            }
-                        }
+                            };
+                        };
                         
 
                         setupAndReset(
@@ -216,25 +231,30 @@ startbtn.addEventListener('click', function(){
                         );
 
 
-                 
+                        answers.textContent = `Your Score is: ${correctAnswers}`;
+                        h1.textContent = ` ${u.length}/${questionArr.length-1} `
+                       
+  
     });
 
-
-
+    
 
 //reseting test
     startTover.addEventListener('click', function(){
 
         QNumbering = 0;
-        clickCount = '';
-        correctAnswers = 0;
+        clickCount = 0;
+        answers.textContent = `Your Score is: ${correctAnswers = 0}`;
+        
         count(0);
-        u = [''];
+        u = [];
 
     startTover.style.display = "none";
     questionDiv.style.display = "none";
     answers.style.display = "none";
     startbtn.style.display = "block";
-    answers.style.display = "none";
+    answers.style.display = "block";
     startbtn.textContent = 'Start Quiz';
+    startbtn.disabled = false;
     });
+    
