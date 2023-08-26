@@ -232,7 +232,7 @@ startbtn.addEventListener('click', function(){
 
 
                         answers.textContent = `Your Score is: ${correctAnswers}`;
-                        h1.textContent = ` ${u.length}/${questionArr.length-1} `
+                        h1.textContent = ` ${u.length}/${questionArr.length-1} `;
                        
   
     });
