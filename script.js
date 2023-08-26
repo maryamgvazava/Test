@@ -20,7 +20,7 @@ const form = document.querySelector('.form')
 //initializing the starting position of the elements
 startTover.style.display = "none";
 questionDiv.style.display = "none";
-answers.style.display = "none";
+answers.style.display = "block";
 
 
 //creating a object for questions
