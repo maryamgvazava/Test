@@ -20,7 +20,7 @@ const form = document.querySelector('.form')
 //initializing the starting position of the elements
 startTover.style.display = "none";
 questionDiv.style.display = "none";
-answers.style.display = "none";
+answers.style.display = "block";
 
 
 //creating a object for questions
@@ -197,23 +197,26 @@ startbtn.addEventListener('click', function(){
                         
                         
                         //checking correct answers ( look at line : 125)
-                        select(checkB, 1);   
-                        select(checkC, 2);      
-                        select(checkA, 3);
-                        select(checkD, 4);
-
-                        if(QNumbering > 4 < 9){
-                            checkA.classList.remove('clicked');
-                            checkB.classList.remove('clicked');
-                            checkC.classList.remove('clicked');
-                            checkD.classList.remove('clicked');
-                        };
+                        function setupAndReset(...selections) {
+                            for (let i = 0; i < selections.length; i += 2) {
+                                select(selections[i], selections[i + 1]);
+                                selections[i].classList.remove('clicked');
+                            }
+                        }
                         
-                        select(checkB, 5);
-                        select(checkA, 6);
-                        select(checkC, 7);
-                       
-  
+
+                        setupAndReset(
+                            checkB, 1, 
+                            checkC, 2, 
+                            checkA, 3, 
+                            checkD, 4, 
+                            checkB, 5, 
+                            checkA, 6, 
+                            checkC, 7
+                        );
+
+
+                 
     });
 
 
