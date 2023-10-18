@@ -47,7 +47,7 @@ const testitem2 = {
     question:'how much falsy values do js have?',
     A:'4',
     B:'2',
-    C:'5',
+    C:'6',
     D:'8'
 };
 
@@ -188,14 +188,7 @@ startbtn.addEventListener('click', function(){
                         //with clickCount and u array we counted clicked on the button.
                         //in case number of clicks are more than number of questions (questionArr.length-1),
                         //startTover button will be activated and sum of scores will be shown;
-                                if(questionArr.length-1 <= u.length-1){
-                                QNumbering = '';
-                                clickCount = '';
-                                questionDiv.style.display = "none";
-                                startTover.style.display = "block";
-                                startbtn.style.display = "none";
-                                answers.style.display = "block";
-                                };   
+                         
 
 
 
@@ -216,6 +209,16 @@ startbtn.addEventListener('click', function(){
                             for (let i = 0; i < selections.length; i += 2) {
                                 select(selections[i], selections[i + 1]);
                                 selections[i].classList.remove('clicked');
+
+                                if(questionArr.length-1 <= u.length-1){
+                                    QNumbering = '';
+                                    clickCount = '';
+                                    questionDiv.style.display = "none";
+                                    startTover.style.display = "block";
+                                    startbtn.style.display = "none";
+                                    answers.style.display = "block";
+                                    answers.textContent = `Your Score is: ${correctAnswers}`;
+                                    };  
                             };
                         };
                         
@@ -231,8 +234,8 @@ startbtn.addEventListener('click', function(){
                         );
 
 
-                        answers.textContent = `Your Score is: ${correctAnswers}`;
-                        h1.textContent = ` ${u.length}/${questionArr.length-1} `;
+                        // 
+                        h1.textContent = `Control Question Quantity: ${u.length}/${questionArr.length-1} `;
                        
   
     });
@@ -244,7 +247,7 @@ startbtn.addEventListener('click', function(){
 
         QNumbering = 0;
         clickCount = 0;
-        answers.textContent = `Your Score is: ${correctAnswers = 0}`;
+        // answers.textContent = `Your Score is: ${correctAnswers = 0}`;
         
         count(0);
         u = [];
@@ -253,7 +256,7 @@ startbtn.addEventListener('click', function(){
     questionDiv.style.display = "none";
     answers.style.display = "none";
     startbtn.style.display = "block";
-    answers.style.display = "block";
+    // answers.style.display = "block";
     startbtn.textContent = 'Start Quiz';
     startbtn.disabled = false;
     });
