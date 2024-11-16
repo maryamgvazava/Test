@@ -36,71 +36,236 @@ const testitem0 = {
 
 const testitem1 = {
     
-    question:'Inside which HTML element do we put the JavaScript?',
-    A:'javasctipt',
-    B:'script',
-    C:'js',
-    D:'scripting'
+    question:'რომელი სამი ფაქტორი უნდა გავითვალისწინო სისტემური ბლოკისთვის ქეისის ასარჩევათ?',
+    A:'mother board და კვების ბლოკის ზომა, თავისუფალი სივრცე და  შიდა და გარე მოწყობილობებისთვის განკუთვნილი ბუდეების რაოდენობა',
+    B:'პროცესორის და ოპერატიული მეხსიერების სიხშირე, ქსელის ბარათი',
+    C:'შიდა და გარე მოწყობილობებისთვის განკუთვნილი ბუდეების რაოდენობა, ოპერატიული მეხსიერების სიხშირე, BIOS',
+    D:'მოწყობილობებისთვის საჭირო  ძაბვების ჯამური ოდენობა, ვინჩესტერი'
 };
 
 const testitem2 = {
-    question:'how much falsy values do js have?',
-    A:'4',
-    B:'2',
-    C:'6',
-    D:'8'
+    question:'ჩამოთვლილთაგან რომელი  მოწყობილობა არ არის ინტეგრირებული motherboard-ზე?',
+    A:'ხმის ბარათი',
+    B:'ვიდეობარათი',
+    C:'ვინჩესტერი',
+    D:'ქსელის ბარათი'
 };
 
 const testitem3 = {
-
-    question: 'what is the type of "undefined"?' ,
-    A:'undefined',
-    B:'object',
-    C:'string',
-    D:'boolean'
+    question: 'რომელი მოწყობილობა გარდაქმნის ცვლად დენს  მუდმივ დენად?' ,
+    A:'პროცესორი',
+    B:'კვების ბლოკი',
+    C:'Bios',
+    D:'PCI-e'
 };
 
 
 const testitem4 = {
 
-    question: 'How to write an IF statement in JavaScript?',
-    A:'if i = 5',
-    B:'if i = 5 than',
-    C:'if i == 5 than',
-    D:'if (i == 5)'
+    question: 'რომელი მოწყობილობის სახეებია : ATX, ITX, MINI ATX, Micro ATX?',
+    A:'პროცესორი',
+    B:'ვიდეო ბარათის',
+    C:'Motherboard',
+    D:'ოპერატიული მეხსიერების'
 };
 
 
 const testitem5 = {
 
-    question: 'How to write an IF statement for executing some code if "i" is NOT equal to 5?' ,
-    A:'if ( i < > 5',
-    B:'if (i != 5)',
-    C:'if (i =! 5 than',
-    D:'if i < > 5'
+    question: 'რომელია ოპტიკურდამგროვებელი მოწყობილობა?' ,
+    A:'SSD',
+    B:'HDD',
+    C:'DVD-rw',
+    D:'ფლეშ მეხსიერება'
 };
 const testitem6 = {
 
-    question: 'which one represents an OR operator?' ,
-    A:'||',
-    B:'??',
-    C:'&&',
-    D:'$$'
+    question: 'სად ინახება ინფორმაცია?' ,
+    A:'მყარი დისკი',
+    B:'ოპერატიული მეხსიერება',
+    C:'პროცესორი',
+    D:'ჩიფსეტი'
 };
 
 
 const testitem7 = {
 
-    question: 'which one represents an AND operator?' ,
-    A:'||',
-    B:'??',
-    C:'&&',
-    D:'$$'
+    question: 'რა არის ვიდეო დაფა?' ,
+    A:'გამოიყენება ინტერნეთში გასასვლელად',
+    B:'გამოიყენება ინფორმაციის შესანახად',
+    C:'გამოიყენება პერიფერიული მოწყობილობების გასამართათ',
+    D:'გამოიყენება გამოსახულების მისაღებად'
+};
+
+
+const testitem8 = {
+    question: 'რომელი კაბელის საშუალებით ხდება ინფორმაციის გაცვლა ვინჩესტერსა და MOTHERBOARD-ს შორის?',
+    A: 'IDE',
+    B: 'USB',
+    C: 'PCI',
+    D: 'AGP'
+};
+
+const testitem9 = {
+    question: 'მყარ დისკზე სექტორების გაერთიანებას ეწოდება:',
+    A: 'სექტორების მასივი',
+    B: 'კლასტერი',
+    C: 'ბილიკი',
+    D: 'დისკო'
+};
+
+const testitem10 = {
+    question: 'რომელი ინტერფეისი აქვს ახალი თაობის ვიდეო ბარათს?',
+    A: 'PCI',
+    B: 'AGP',
+    C: 'PCI-e',
+    D: 'VGA'
+};
+
+const testitem11 = {
+    question: 'რომელია მონიტორის კონექტორი?',
+    A: 'DVI',
+    B: 'PCI',
+    C: 'AGP',
+    D: 'IDE'
+};
+
+
+const testitem12 = {
+    question: 'რომელი  არ არის პროცესორის მახასიათებელი ?',
+    A: 'ტაქტური სიხშირე',
+    B: 'ქეშ მეხსიერება',
+    C: 'ბირთვები და ნაკადები',
+    D: 'პიქსელი'
+};
+
+
+const testitem13 = {
+    question: 'რომელი სოკეტის პროცესორი არ არსებობს?',
+    A: 'VGA',
+    B: 'LGA',
+    C: 'XGA',
+    D: 'GGA'
+};
+
+const testitem14 = {
+    question: 'რომელ სოკეტზე არ მუშაობს i-3?',
+    A: 'LGA478',
+    B: 'LGA1155',
+    C: 'LGA1156',
+    D: 'LGA1151'
+};
+
+const testitem15 = {
+    question: 'რამდენი დონისგან შედგება პროცესორის ქეშ მეხსიერება?',
+    A: '2',
+    B: '3',
+    C: '5',
+    D: '4'
+};
+
+const testitem16 = {
+    question: 'რომელი ტექნოლოგიის საშუალებით ხდება ტაქტური სიხშირის მომატება მძიმე სამუშაოს შესრულებისთვის Intel პროცესორებში?',
+    A: 'Hyper-threading',
+    B: 'Turbo Boost',
+    C: 'Multitasking',
+    D: 'Intel Virtualization'
+};
+
+const testitem17 = {
+    question: 'რომელია პროცესორების ძირითადი მწარმოებელი? (მოხაზეთ ერთი ან რამდენიმე სწორი პასუხი)',
+    A: 'AMD/Intel',
+    B: 'Samsung',
+    C: 'Apple',
+    D: 'Asus'
+};
+
+const testitem18 = {
+    question: 'არხს, რომლის საშუალებითაც ინფორმაცია მოძრაობს პროცესორისკენ, არის:',
+    A: 'SATA',
+    B: 'ნაკადი',
+    C: 'მონაცემთა სალტე',
+    D: 'ტაქტური სიხშირე'
+};
+
+const testitem19 = {
+    question: 'რომელია PGA 942 socket-ის პროცესორი?',
+    A: 'AMD FX Zambezi',
+    B: 'i-3',
+    C: 'i-7',
+    D: 'Intel Silver J5005'
+};
+
+const testitem20 = {
+    question: 'რა არის ჩიპსეტი?',
+    A: 'ჩიპსეტი არის ლოგიკური ჩიპების ერთობლიობა, რომელიც აერთიანებს ჩრდილოეთ ხიდს და სამხრეთ ხიდს.',
+    B: 'ჩიპსეტი არის ლოგიკური ჩიპი, რომელიც განსაზღვრავს რამდენი მოწყობილობა უნდა შეერთდეს დედა ბარათზე.',
+    C: 'ჩიპსეტი არის ლოგიკური ჩიპი, რომელიც განსაზღვრავს რა ტიპის მოწყობილობა უნდა დაერთდეს.',
+    D: 'ჩიპსეტი არის ლოგიკური ჩიპი, რომელიც პასუხისმგებელია ინფორმაციის შესანახად.'
+};
+
+const testitem21 = {
+    question: 'რისი სლოტია PCI-e?',
+    A: 'მყარი დისკი',
+    B: 'ოპერატიული მეხსიერება',
+    C: 'ვიდეო ბარათი',
+    D: 'ხმის ბარათი'
+};
+
+const testitem22 = {
+    question: 'რომელი მოწყობილობა გარდაქმნის ცვლად დენს მუდმივ დენად?',
+    A: 'პროცესორი',
+    B: 'კვების ბლოკი',
+    C: 'BIOS',
+    D: 'PCI-e'
+};
+
+const testitem23 = {
+    question: 'რაში იზომება პროცესორის ტაქტური სიხშირე?',
+    A: 'hz',
+    B: 'vt',
+    C: 'a',
+    D: 'v'
+};
+
+const testitem24 = {
+    question: 'რომელი მოწყობილობის ტიპებია: ATX, ITX, MINI ATX, Micro ATX?',
+    A: 'პროცესორი',
+    B: 'ვიდეო ბარათი',
+    C: 'Motherboard',
+    D: 'ოპერატიული მეხსიერება'
+};
+
+const testitem25 = {
+    question: 'რომელი სოკეტის პროცესორი არ არსებობს?',
+    A: 'VGA',
+    B: 'PGA',
+    C: 'XGA',
+    D: 'GGA'
+};
+
+const testitem26 = {
+    question: 'რომელია ოპტიკურად დამგროვებელი მოწყობილობა?',
+    A: 'SSD',
+    B: 'HDD',
+    C: 'CD-RW',
+    D: 'ფლეშ მეხსიერება'
+};
+
+const testitem28 = {
+    question: 'CMOS არის:',
+    A: 'ენერგო დამოუკიდებელი მეხსიერება, რომელიც ინახავს ინფორმაციას კომპიუტერის კონფიგურაციის შესახებ.',
+    B: 'მყარი დისკის ნაწილი, რომელიც პასუხისმგებელია ინფორმაციის შენახვისთვის.',
+    C: 'ოპერატიული მეხსიერების ერთ-ერთი ტიპია.',
+    D: 'BIOS-ის ერთ-ერთი მოდიფიკაცია.'
 };
 
 
 //creating an array of all question objects
-let questionArr = [testitem0, testitem1, testitem2, testitem3, testitem4, testitem5, testitem6, testitem7];
+let questionArr = [testitem0, testitem1, testitem2, testitem3, testitem4, testitem5, testitem6, testitem7,
+    testitem8, testitem9, testitem10, testitem11, testitem12, testitem13, testitem14, testitem15,
+    testitem16, testitem17, testitem18, testitem19, testitem20, testitem21, testitem22, testitem23,
+    testitem24, testitem25, testitem26, testitem28];
 
 
 
@@ -224,13 +389,35 @@ startbtn.addEventListener('click', function(){
                         
 
                         setupAndReset(
-                            checkB, 1, 
-                            checkC, 2, 
-                            checkA, 3, 
-                            checkD, 4, 
-                            checkB, 5, 
+                            checkA, 1, 
+                            checkB, 2, 
+                            checkB, 3, 
+                            checkA, 4, 
+                            checkC, 5, 
                             checkA, 6, 
-                            checkC, 7
+                            checkD, 7,
+                            checkA, 8,
+                            checkB, 9,
+                            checkC, 10,
+                            checkA, 11,
+                            checkD, 12,
+                            checkA, 13,
+                            checkA, 14,
+                            checkB, 15,
+                            checkB, 16,
+                            checkA, 17,
+                            checkB, 18,
+                            checkA, 19,
+                            checkA, 20,
+                            checkC, 21,
+                            checkB, 22,
+                            checkA, 23,
+                            checkC, 24,
+                            checkA, 25,
+                            checkC, 26,
+                            checkA, 27,
+
+
                         );
 
 
