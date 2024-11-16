@@ -406,7 +406,7 @@ startbtn.addEventListener('click', function(){
                             checkB, 15,
                             checkB, 16,
                             checkA, 17,
-                            checkB, 18,
+                            checkC, 18,
                             checkA, 19,
                             checkA, 20,
                             checkC, 21,
