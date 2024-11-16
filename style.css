@@ -21,6 +21,7 @@ body{
     align-items: center;
     flex-direction: column;
     background-color: rgb(184, 208, 224);
+    padding-top:70px;
 }
 
 
