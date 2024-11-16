@@ -362,7 +362,7 @@ startbtn.addEventListener('click', function(){
                         let select = function (V, numbers) {
                             V.addEventListener('click', function(){
                                 if ((QNumbering == numbers) && !this.classList.contains('clicked')){ 
-                                        correctAnswers+=2;            
+                                        correctAnswers+=1;            
                                         this.classList.add('clicked');
                                 };   
                         });
