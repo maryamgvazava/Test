@@ -1,9 +1,10 @@
 .testarea{
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
-    height: 50vh;
+    align-items: center; */
+    /* height: 50vh; */
     display: block;
+    /* max-width: 900px; */
 }
 
 .btn{
@@ -23,10 +24,20 @@ body{
 }
 
 
-form{
-    padding: 50px;
+
+.form p {
+    flex-basis: 100%; 
+    margin-bottom: 10px;
 }
 
+input[type="radio"] {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  input[type="radio"] + label {
+    margin-bottom: 5px;
+  }
 
 label, input {
     margin: 10px; 
